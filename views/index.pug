@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	body(class="text-center")
+		h1= title
+		h3= subtitle
+		.container
+			.col-sm-2.col-sm-offset-2
+				a(href="/offices")
+					button(class="btn btn-primary") Offices
+			.col-sm-2
+				a(href="/customers") 
+					button(class="btn btn-primary") Customers
+			.col-sm-2
+				a(href="/employees")
+					button(class="btn btn-primary") Employees
+			.col-sm-2
+				a(href="/sum") 
+					button(class="btn btn-primary") Sum
+
+
+

@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	a(href="/")
+		buttton(class="btn btn-primary") Home
+	h1= title
+	h3= subtitle
+	table(id="myTable")
+		thead
+			th City 
+			th Phone
+			th Address
+			th State
+			th Country
+			th Postal Code
+		tbody
+			-results.map((row)=>{
+				tr
+					td #{row.city}
+					td #{row.phone}
+					td #{row.addressLine1 + " " + row.addressLine2}
+					td #{row.state}
+					td #{row.country}
+					td #{row.postalCode}
+			-})
+	h3 Add a new Entry
+	form(action="" id= id)
+		input(type="text" placeholder="city")
+		input(type="text" placeholder="phone")
+		input(type="text" placeholder="address")
+		input(type="text" placeholder="state")
+		input(type="text" placeholder="country")
+		input(type="text" placeholder="postal code")
+		button(type="submit" class="btn btn-primary") Submit

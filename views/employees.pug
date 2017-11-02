@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	a(href="/")
+		buttton(class="btn btn-primary") Home
+	h1= title
+	h3= subtitle
+	table(id="myTable")
+		thead
+			th Employee Name
+			th Email
+			th Office Code
+			th Reports To
+			th Job Title
+		tbody
+			-results.map((row)=>{
+				tr
+					td #{row.firstName + " " + row.lastName}
+					td #{row.email}
+					td #{row.officeCode}
+					td #{row.reportsTo}
+					td #{row.jobTitle}
+			-})
+	h3 Add a new Entry
+	form(action="" id= id)
+		input(type="text" placeholder="name")
+		input(type="text" placeholder="email")
+		input(type="text" placeholder="office code")
+		input(type="text" placeholder="reports to")
+		input(type="text" placeholder="job title")
+		button(type="submit" class="btn btn-primary") Submit

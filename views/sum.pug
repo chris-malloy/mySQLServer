@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	a(href="/")
+		buttton(class="btn btn-primary") Home
+	h1= title
+	h3= subtitle
+	table(id="myTable")
+		thead
+			th Order Number
+			th Order Total
+		tbody
+			-results.map((row)=>{
+				tr
+					td #{row.orderNumber}
+					td #{row.orderTotal}
+			-})
